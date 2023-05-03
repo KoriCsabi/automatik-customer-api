@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "4c0b74d6-e407-476f-a6cf-b2f517d5f83e",
+		"name": "Automatik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27225017"
+	},
+	"item": [
+		{
+			"name": "Customer List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/customer/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Teszt",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Teszt cím",
+							"type": "text"
+						},
+						{
+							"key": "customer_code",
+							"value": "asd123",
+							"type": "text"
+						},
+						{
+							"key": "contract_date",
+							"value": "1683122502",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/customer/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Módosított",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Módosított cím",
+							"type": "text"
+						},
+						{
+							"key": "customer_id",
+							"value": "123asdf",
+							"type": "text"
+						},
+						{
+							"key": "contract_date",
+							"value": "1683125598",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/customer/update",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk create customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"name\": \"Bulk1\",\n            \"address\": \"Bulkcím1\",\n            \"customer_code\": \"asd123\",\n            \"contract_date\": \"1683125598\"\n        },\n        {\n            \"name\": \"Bulk2\",\n            \"address\": \"Bulkcím2\",\n            \"customer_code\": \"asd123\",\n            \"contract_date\": \"1683125598\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/customer/bulk-create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"bulk-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk update customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Modosított Bulk1\",\n            \"address\": \"Bulkcím1\",\n            \"customer_code\": \"asd123\",\n            \"contract_date\": \"1683125598\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Módosított Bulk2\",\n            \"address\": \"Bulkcím2\",\n            \"customer_code\": \"asd123\",\n            \"contract_date\": \"1683125598\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/customer/bulk-update",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"customer",
+						"bulk-update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
